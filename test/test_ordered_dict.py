@@ -11,7 +11,7 @@ class TestSortedDict(unittest.TestCase):
     def test_setitem(self):
         d = SortedDict()
         d['key'] = 'value'
-        self.assertEquals(d['key'], 'value')
+        self.assertEqual(d['key'], 'value')
 
     def test_delitem(self):
         d = SortedDict()
@@ -20,11 +20,11 @@ class TestSortedDict(unittest.TestCase):
         d['third'] = "third"
         expect = ["first", "second", "third"]
         actual = d.keys()
-        self.assertEquals(expect, actual)
+        self.assertEqual(expect, actual)
         d.__delitem__("second")
         del_expect = ["first", "third"]
         del_actual = d.keys()
-        self.assertEquals(del_expect, del_actual)
+        self.assertEqual(del_expect, del_actual)
 
     def test_popitem(self):
         d = SortedDict()
@@ -32,8 +32,8 @@ class TestSortedDict(unittest.TestCase):
         d['second'] = "second"
         d['third'] = "third"
         head_value = d.popitem(False)
-        self.assertEquals(head_value, ("first","first"))
+        self.assertEqual(head_value, ("first","first"))
         tail_value = d.popitem()
-        self.assertEquals(tail_value, ("third","third"))
+        self.assertEqual(tail_value, ("third","third"))
 
 
